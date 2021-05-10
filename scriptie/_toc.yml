@@ -18,6 +18,9 @@
     - file: methoden
 #             - file: methode
 #             - file: resultaten
+- part: Referentie
+  chapters:
+  - file: referentie
 
 # - part: Resultaten
 # #   chapters:
