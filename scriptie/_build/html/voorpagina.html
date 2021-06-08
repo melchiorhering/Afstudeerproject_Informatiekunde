@@ -49,6 +49,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Abstract" href="abstract.html" />
@@ -70,7 +71,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logo2.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Verkeersongelukken</h1>
@@ -198,9 +199,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/voorpagina.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/voorpagina.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -234,6 +235,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/melchiorhering/Afstudeerproject_Informatiekunde/master?urlpath=tree/docs/voorpagina.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -249,6 +267,66 @@
                 
   <div class="section" id="voorpagina">
 <h1>Voorpagina<a class="headerlink" href="#voorpagina" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+<span class="c1"># !wget  https://www.rijkswaterstaat.nl/apps/geoservices/geodata/dmc/bron/01-01-2010_31-12-2019.zip  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/mnt/c/Users/stijn/OneDrive/Bureaublad/Afstudeerproject/afstudeerproject_repo/scriptie&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here is a note!</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># puntlocatie = pd.read_csv(&#39;/Afstudeerproject/Data/01-01-2010_31-12-2019 (BRON)/PGS0112-o-CSV-bestand-J-1-N-J-N/Netwerkgegevens/puntlocaties.txt&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># puntlocatie</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # usecols=[&#39;WVK_BEGDAT&#39;, &#39;FK_VELD5&#39;, &#39;KLOK_BEG&#39;, &#39;KLOK_END&#39;]</span>
+<span class="c1"># wegvakken = pd.read_csv(&#39;Verkeersongevallen/01-01-2010_31-12-2019/PGS0112-o-CSV-bestand-J-1-N-J-N/Netwerkgegevens/wegvakken.txt&#39;)</span>
+
+<span class="c1"># wegvakken.columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ongevallen = pd.read_csv(&#39;Verkeersongevallen/01-01-2010_31-12-2019/PGS0112-o-CSV-bestand-J-1-N-J-N/Ongevallengegevens/ongevallen.txt&#39;)</span>
+<span class="c1"># display(ongevallen.shape)</span>
+<span class="c1"># display(ongevallen.columns)</span>
+<span class="c1"># ongevallen.head()</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
